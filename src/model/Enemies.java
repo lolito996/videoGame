@@ -13,6 +13,12 @@ public class Enemies {
     private TypeEnemies deftype;
 
 
+    /**
+     * @param aname
+     * @param atipo
+     * @param aPointsDelete
+     * @param aPointsWin
+     */
     public Enemies(String aname,int atipo, int aPointsDelete,int aPointsWin){
         name=aname;
         type=atipo;
@@ -36,20 +42,32 @@ public class Enemies {
     public double getPosy(){
         return posY;
     }
+    public int getType(){
+        return type;
+    }
     
-    public void getTypeEnemie(){
+    /**
+     * @return msj
+     */
+    public String getTypeEnemie(){
+        String msj="";
         if(type==1){
             deftype=TypeEnemies.OGROS;
+            msj="OGROS";
         }
         else if(type==2){
             deftype=TypeEnemies.ABSTRACTOS;
+            msj="ABSTRACTO";
         }
         else if(type==3){
             deftype=TypeEnemies.JEFES;
+            msj="JEFES";
         }
         else if(type==4){
             deftype=TypeEnemies.MAGICOS;
+            msj="MAGICOS";
         }
+        return msj;
     }
 
 }
